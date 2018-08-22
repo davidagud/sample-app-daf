@@ -23,12 +23,20 @@ h1 {
   margin: 0px 10px;
 }
 
+body {
+  margin-top: 56px;
+  margin-right: 0px;
+  margin-left: 0px;
+  margin-bottom: 0px;
+  background-color: gray;
+}
+
+.content {
+  margin: 0px 33px;
+}
+
 footer {
   background-color: #9d9d9d;
   height: 40px;
   margin-top: 10px;
-}
-
-body {
-  margin-top: 56px;
 }
