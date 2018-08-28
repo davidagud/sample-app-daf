@@ -1,0 +1,14 @@
+<div class="product-column col-md-4 col-6">
+  <div class="product-frame">
+    <a href="#"><h2 class="product-title"><%= product.name %></h2></a>
+    <!--<img src="<%#= product.image_url %>" alt="<%#= product.name %>">-->
+    <div class="product-window container d-flex align-items-center justify-content-center">
+      <%= image_tag(product.image_url, class: "img-fluid product-image") %>
+    </div>
+    <p><%= product.description %></p>
+    <strong><%= product.price %></strong>
+    <%= link_to 'Show', product %></td>
+    <%= link_to 'Edit', edit_product_path(product) %>
+    <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div><!--End product frame-->
+</div><!--End product column-->
