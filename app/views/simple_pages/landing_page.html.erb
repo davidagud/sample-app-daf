@@ -1,8 +1,8 @@
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class ="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2" class="active"></li>
+    <%@products.each_with_index do |product, n| %>
+     <li data-target="#carouselExampleIndicators" data-slide-to="<%= n %>" class="active"></li>
+    <% end %>
   </ol>
   <div class="carousel-inner">
     <%@products.each do |product| %>
@@ -13,7 +13,7 @@
          <%= product.name %>
         </div>
       </div>
-      <% end %>
+     <% end %>
     </div>
 
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
