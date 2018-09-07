@@ -1,6 +1,6 @@
 <div class="product-column col-md-4 col-6">
   <div class="product-frame">
-    <a href="#"><h2 class="product-title"><%= product.name %></h2></a>
+    <a href="#"><h2 class="product-title"><%= link_to product.name, product_path(product.id) %></h2></a>
     <!--<img src="<%#= product.image_url %>" alt="<%#= product.name %>">-->
     <div class="product-window container d-flex align-items-center justify-content-center">
       <%= image_tag(product.image_url, class: "img-fluid product-image") %>
