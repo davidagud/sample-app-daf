@@ -30,8 +30,7 @@
           <li class="nav-item"><%= link_to "Contact", simple_pages_contact_path %></li>
         </ul>
         <%= form_with(url: products_path, method: 'get', local: true) do |form| %>
-          <%= form.label :q, 'Search for:' %>
-          <%= form.text_field :q, id: 'q', value: params[:q] %>
+          <%= form.text_field :q, id: 'q', value: params[:q], onfocus: "if (this.value=='Search') this.value = ''", onblur: "if (this.value=='') this.value = 'Search'", value: "Search" %>
           <%= form.submit 'Search' %>
         <% end %>
       </div>
@@ -43,8 +42,8 @@
 
     <footer class="d-flex align-items-center justify-content-center">
       <div>
-       <span>&copy; 2018 Bike Berlin</span>
-     </div>
+        <span>&copy; 2018 Bike Berlin</span>
+      </div>
     </footer>
   </body>
 </html>
