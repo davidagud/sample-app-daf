@@ -9,12 +9,13 @@ class SimplePagesController < ApplicationController
   end
 end
 
-def thank_you
-  @name = params[:name]
-  @email = params[:email]
-  @message = params[:message]
-  ActionMailer::Base.mail(from: @email,
-    to: 'davidagud@gmail.com',
-    subject: "A new contact form from #{@name}",
-    body: @message).deliver_now
-end
+class mail < ActionMailer::Base
+  def thank_you
+    @name = params[:name]
+    @email = params[:email]
+    @message = params[:message]
+    ActionMailer::Base.mail(from: @email,
+      to: 'davidagud@gmail.com',
+      subject: "A new contact form from #{@name}",
+      body: @message).deliver_now
+  end
