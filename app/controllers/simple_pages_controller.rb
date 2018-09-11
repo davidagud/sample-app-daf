@@ -9,7 +9,7 @@ class SimplePagesController < ApplicationController
   end
 end
 
-class Mail < ActionMailer::Base
+class ActionMailer::Base
   def thank_you
     @name = params[:name]
     @email = params[:email]
