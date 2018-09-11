@@ -15,7 +15,7 @@ class ActionMailer::Base
     @email = params[:email]
     @message = params[:message]
     ActionMailer::Base.mail(from: @email,
-      to: 'davidagud@gmail.com',
+      to: 'david@cafesocial.us',
       subject: "A new contact form from #{@name}",
       body: @message).deliver_now
   end
