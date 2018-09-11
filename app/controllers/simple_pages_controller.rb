@@ -9,7 +9,7 @@ class SimplePagesController < ApplicationController
   end
 end
 
-class ActionMailer::Base
+class Mail < ActionMailer::Base
   def thank_you
     @name = params[:name]
     @email = params[:email]
@@ -19,3 +19,4 @@ class ActionMailer::Base
       subject: "A new contact form from #{@name}",
       body: @message).deliver_now
   end
+end
