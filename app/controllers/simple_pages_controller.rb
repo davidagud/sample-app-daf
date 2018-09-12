@@ -1,15 +1,13 @@
 class SimplePagesController < ApplicationController
+
   def index
   end
-end
 
-class SimplePagesController < ApplicationController
+
   def landing_page
     @products = Product.limit(4)
   end
-end
 
-class ActionMailer::Base
   def thank_you
     @name = params[:name]
     @email = params[:email]
@@ -19,4 +17,5 @@ class ActionMailer::Base
       subject: "A new contact form from #{@name}",
       body: @message).deliver_now
   end
+  
 end
