@@ -7,7 +7,5 @@ class UserMailer < ApplicationMailer
            to: 'davidagud@gmail.com',
            subject: "A new contact form message from #{name}")
   end
-
-
-
+  
 end
