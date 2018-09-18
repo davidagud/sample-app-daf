@@ -1,4 +1,7 @@
-class OrdersController <ApplicationController
+class OrdersController < ApplicationController
+  #before_action :authenticate_user!
+  #load_and_authorize_resource
+
   def index
     @orders = Order.includes(:product).all
   end
@@ -16,5 +19,4 @@ class OrdersController <ApplicationController
   def destroy
   end
 
-  before_action :authenticate_user!
 end
