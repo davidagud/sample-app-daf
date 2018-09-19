@@ -42,7 +42,12 @@
   <div class="new-comment">
     <%= render 'new_comment' %>
   </div><!--end new comment-->
-</div><!--end comments section>
+
+  <div class="comments">
+    <%= render 'comments' %>
+  </div><!--end comments-->
+</div><!--end comments section-->
+
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
