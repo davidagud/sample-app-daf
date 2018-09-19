@@ -15,4 +15,4 @@
 //= require turbolinks
 //= require jquery3
 //= require_tree .
-//= rquire jquery.raty.js
+//= rquire jquery.raty
