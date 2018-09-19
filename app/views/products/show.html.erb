@@ -33,10 +33,16 @@
   </div><!--end product info-->
 </div><!--end product box-->
 
-<div class="comments row justify-content-center">
-  <%= @product.highest_rating_comment %>
-  <%= @product.lowest_rating_comment %>
-</div><!--end comments-->
+<div class="comments-section"
+  <div class="top-comments row justify-content-center">
+    <%= @product.highest_rating_comment %>
+    <%= @product.lowest_rating_comment %>
+  </div><!--end top comments-->
+
+  <div class="new-comment">
+    <%= render 'new_comment' %>
+  </div><!--end new comment-->
+</div><!--end comments section>
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
