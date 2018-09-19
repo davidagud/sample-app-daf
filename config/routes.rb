@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :products do
     resources :comments
   end
-  
+
   get 'simple_pages/about'
   get 'simple_pages/contact'
   get 'simple_pages/index'
