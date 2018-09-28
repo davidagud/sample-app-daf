@@ -2,7 +2,7 @@ FactoryBot.define do
 
   factory :product do
     name { "Test item" }
-    rating { 1 }
+    comment
   end
 
 end
