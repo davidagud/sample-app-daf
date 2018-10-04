@@ -1,6 +1,6 @@
 <div class="product-box">
   <div class="row justify-content-center">
-    <%= image_tag(@product.image_url, class: "img-fluid product-image-show") %>
+    <%= image_tag(@product.image_url, class: "img-fluid product-image-show img-zoom", data_zoom_image: @product.image_url) %>
   </div>
 
   <div class="product-info">
