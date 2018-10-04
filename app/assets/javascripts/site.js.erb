@@ -16,5 +16,8 @@ $(document).on('turbolinks:load', function(){
     }
   });
 
-  $('.img-zoom').elevateZoom();
+  $('.img-zoom').elevateZoom({
+    zoomType: "inner",
+    cursor: "crosshair"
+  });
 });
