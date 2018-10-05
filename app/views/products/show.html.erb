@@ -1,3 +1,5 @@
+<% cache @product do %>
+
 <div class="product-box">
   <div class="row justify-content-center">
     <%= image_tag(@product.image_url, class: "img-fluid product-image-show img-zoom", data_zoom_image: @product.image_url) %>
@@ -62,3 +64,5 @@
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
+
+<% end %>

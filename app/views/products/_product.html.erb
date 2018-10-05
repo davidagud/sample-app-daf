@@ -1,3 +1,4 @@
+<% cache product do %>
 <div class="product-column col-md-4 col-6">
   <div class="product-frame">
     <a href="#"><h2 class="product-title"><%= link_to product.name, product_path(product.id) %></h2></a>
@@ -12,3 +13,4 @@
     <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
   </div><!--End product frame-->
 </div><!--End product column-->
+<% end %>

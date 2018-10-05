@@ -16,7 +16,9 @@
   <% end %>
 
     <div class="row products">
+      <% cache(cache_key_for_products) do %>
       <%= render @products %>
+      <% end %>
     </div><!--End row-->
   </tbody>
 </table>
