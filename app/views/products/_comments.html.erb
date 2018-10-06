@@ -1,5 +1,7 @@
 <div class="product-reviews">
+  <% $redis.set("comment_count", 1) %>
   <% @comments.each do |comment| %>
       <%= render comment %>
+      <% $redis.incrby("comment_count", 1) %>
   <% end %>
 </div>

@@ -12,7 +12,7 @@
     </p>
 
     <p>
-      <strong>Average Rating:</strong><div class="rated" id="average-rating" data-score="<%= @product.average_rating %>"></div>
+      <strong>Average Rating <%= $redis.get("comment_count") %>:</strong><div class="rated" id="average-rating" data-score="<%= @product.average_rating %>"></div>
     </p>
 
     <p>
