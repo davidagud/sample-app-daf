@@ -61,4 +61,7 @@ Rails.application.configure do
 
   # For dynamic links that show up inside emails
   config.action_mailer.default_url_options = { host: 'localhost:3000' }
+
+  # Tell rails generator to generate plain JS files instead of Coffeescript
+  config.app_generators.javascript_engine = :javascript
 end

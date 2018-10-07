@@ -103,4 +103,8 @@ Rails.application.configure do
   # For dynamic links that show up inside emails
   config.action_mailer.default_url_options = { host: 'sample-app-daf.herokuapp.com' }
 
+  # Allow ActionCable requests on production
+  config.web_socket_server_url = "wss://sample-app-daf.herokuapp.com/cable"
+  config.action_cable.allowed_request_origins = ['https://sample-app-daf.herokuapp.com', 'http://sample-app-daf.herokuapp.com']
+
 end
