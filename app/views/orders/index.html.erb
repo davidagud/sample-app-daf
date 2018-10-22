@@ -1,13 +1,21 @@
 <div class="row">
   <% @orders.each do |order| %>
-    <div class="col-sm">
-      <h1>
-        Order # <%= order.id %>:
-        <%= link_to order.product.name, order %>
-      </h1>
-      <div><%= image_tag(order.product.image_url, class: "product-image img-fluid") %></div>
-      <p><%= order.product.description %></p>
-      <strong>$ <%= order.product.price %></strong>
-    </div><!-- /col -->
+    <div class="order-column col-md-4 col-6">
+      <div class="order-frame">
+        <div class="top">
+          <h2 class="order-title">
+            Order # <%= order.id %>:
+            <%= link_to order.product.name, order %>
+          </h2>
+          <div class="order-window container d-flex align-items-center justify-content-center">
+            <%= image_tag(order.product.image_url, class: "product-image img-fluid") %>
+          </div>
+        </div>
+        <div class="bottom">
+          <p id="descrip"><%= order.product.description %></p>
+          <strong id="price">$ <%= order.product.price %></strong>
+        </div>
+      </div><!--End order frame -->
+    </div><!--End product column -->
   <% end %>
 </div>

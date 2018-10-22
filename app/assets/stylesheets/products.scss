@@ -6,6 +6,9 @@
   overflow: hidden;
   white-space: nowrap;
   font-size: 2vw;
+  text-align: center;
+  height: 3vw;
+  margin-bottom: 0px;
 }
 
 .product-window {
@@ -26,8 +29,29 @@
   background-color: white;
   padding: 10px;
   height: 100%;
+  //display: table;
 }
 
 .product-column {
   margin-bottom: 30px;
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100%;
+  margin-top: -21vw;
+  padding-top: 21vw;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.top {
+  vertical-align: middle;
+}
+
+.top a:hover {
+    background-color: white;
+    color: black;
 }

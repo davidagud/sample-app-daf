@@ -16,9 +16,51 @@
 }
 
 .product-reviews .row {
-  display: initial,
+  display: initial;
 }
 
 #new_comment {
-  display: initial!important,
+  display: initial!important;
+}
+
+#top-comment-box {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+
+.top-comments {
+  background-color: lightgray;
+  padding: 5px 5px;
+  margin-bottom: 15px;
+}
+
+.top-comments h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#highest-comment .col-12, #lowest-comment .col-12 {
+  justify-content: center;
+  display: flex;
+}
+
+.product-name {
+  font-size: 3vw;
+  margin-bottom: 1vw;
+  text-align: center;
+}
+
+.product-ratings {
+  font-size: 1em;
+  text-align: center;
+}
+
+.product-header {
+  width: 50%;
+  justify-content: center;
+  margin-left: 25%;
+  margin-right: 10%;
+  margin-bottom: 20px;
 }

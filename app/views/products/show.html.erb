@@ -1,28 +1,19 @@
 <div class="product-box">
+  <div class="product-header row">
+    <div class="product-name"><%= @product.name%></div>
+    <div class="product-ratings row"><%= $redis.get("comment_get") %><div class="rated" id="average-rating" data-score="<%= @product.average_rating %>"></div>&nbsp;(<%= @product.comment_get @product.id %>)</div>
+  </div>
+
   <div class="row justify-content-center" data-product-id="<%= @product.id %>">
     <%= image_tag(@product.image_url, class: "img-fluid product-image-show img-zoom", data_zoom_image: @product.image_url) %>
   </div>
 
   <div class="product-info">
-    <p>
-      <strong>Name:</strong>
-      <%= @product.name %>
-    </p>
-
-    <p>
-      <strong>Average Rating<%= $redis.get("comment_get") %>:</strong><div class="rated" id="average-rating" data-score="<%= @product.average_rating %>"></div>
-      Comment Count: <%= @product.comment_get @product.id %>
-    </p>
 
     <p>
       <strong>Description:</strong>
       <%= @product.description %>
     </p>
-
-    <!--<p>
-      <strong>Image url:</strong>
-      <%= @product.image_url %>
-    </p>--><!--hide image url-->
 
     <p>
       <strong>Colour:</strong>
@@ -44,11 +35,22 @@
   </div><!--end product info-->
 </div><!--end product box-->
 
-<div class="comments-section">
+<div class="comments-section container-fluid">
   <div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
-  <div class="top-comments row justify-content-center">
-    <%= @product.highest_rating_comment %>
-    <%= @product.lowest_rating_comment %>
+  <div class="top-comments row">
+    <h2 class="col-12">Top Comments</h2>
+      <div class="row" id="top-comment-box">
+        <div class="col-6 row" id="highest-comment">
+          <div class="col-12"><%= @product.highest_rating_comment.user.first_name %>&nbsp;<small><em><%= "#{time_ago_in_words(@product.highest_rating_comment.created_at)} ago" %></em></small></div>
+          <div class="col-12"><%= @product.highest_rating_comment.body %></div>
+          <div class="col-12"><div class="rated" data-score="<%= @product.highest_rating_comment.rating %>"></div></div>
+        </div>
+        <div class="col-6 row" id="lowest-comment">
+          <div class="col-12"><%= @product.lowest_rating_comment.user.first_name %>&nbsp;<small><em><%= "#{time_ago_in_words(@product.lowest_rating_comment.created_at)} ago" %></em></small></div>
+          <div class="col-12"><%= @product.lowest_rating_comment.body %></div>
+          <div class="col-12"><div class="rated" data-score="<%= @product.lowest_rating_comment.rating %>"></div></div>
+        </div>
+    </div>
   </div><!--end top comments-->
 
   <div class="new-comment">
@@ -56,6 +58,7 @@
   </div><!--end new comment-->
 
   <div class="comments">
+    <h2>Comments</h2>
     <%= render 'comments' %>
     <%= will_paginate @comments %>
   </div><!--end comments-->
