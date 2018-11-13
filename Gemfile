@@ -35,6 +35,9 @@ gem 'will_paginate', '~> 3.1.1'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Bootstrap
+gem 'bootstrap', '~> 4.1.3'
+
 # Authentication gem
 gem 'devise'
 
