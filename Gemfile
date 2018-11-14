@@ -38,6 +38,9 @@ gem 'will_paginate', '~> 3.1.1'
 # Bootstrap
 gem 'bootstrap', '~> 4.1.3'
 
+# Font Awesome
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.2'
+
 # Authentication gem
 gem 'devise'
 

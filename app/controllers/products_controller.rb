@@ -7,13 +7,11 @@ class ProductsController < ApplicationController
   def index
     if params[:q]
       search_term = params[:q]
-      if Rails.env.production?
-        @products = Product.where("name ilike ?", "%#{search_term}%")
-      else
-        @products = Product.where("name LIKE ?", "%#{search_term}%")
+        @products = Product.search(search_term)
+      if @products.nil?
+        flash.now[:info] = "Sorry, we don't have any products that match #{search_term}, check out all the other stuff we have"
+        @products = Product.all
       end
-    else
-      @products = Product.all
     end
   end
 
